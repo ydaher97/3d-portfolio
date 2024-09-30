@@ -44,6 +44,7 @@ const Cube = ({ ...props }) => {
           <meshMatcapMaterial matcap={texture} toneMapped={false} />
         </mesh>
       </group>
+      
     </Float>
   );
 };
