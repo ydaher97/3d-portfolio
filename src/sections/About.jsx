@@ -2,8 +2,10 @@ import { useState ,useEffect, useRef, useMemo} from 'react';
 import Globe from 'react-globe.gl';
 import * as THREE from '//unpkg.com/three/build/three.module.js';
 import Button from '../components/Button.jsx';
-
-
+// import TechStackCarousel from '../components/TechStackCarsouel.jsx';
+import TechObjectCanvas from '../components/TechObject.jsx';
+// import { Canvas } from '@react-three/fiber';
+// import Stars from './Stars.jsx';
 
 const EARTH_RADIUS_KM = 6371; // km
 const SAT_SIZE = 80; // km
@@ -102,8 +104,9 @@ const About = () => {
 
         <div className="col-span-1 xl:row-span-3">
           <div className="grid-container">
-            <img src="assets/grid2.png" alt="grid-2" className="w-full sm:h-[276px] h-fit object-contain" />
-
+            {/* <img src="assets/grid2.png" alt="grid-2" className="w-full sm:h-[276px] h-fit object-contain" /> */}
+            {/* <TechStackCarousel /> */}
+            <TechObjectCanvas />
             <div>
               <p className="grid-headtext">Tech Stack</p>
               <p className="grid-subtext">
@@ -117,6 +120,7 @@ const About = () => {
         <div className="col-span-1 xl:row-span-4">
           <div className="grid-container">
             <div className="rounded-3xl w-full sm:h-[326px] h-fit flex justify-center items-center">
+           
               <Globe
               ref={globeEl}
                 height={400}

@@ -1,3 +1,74 @@
+import javascript from "../tech/javascript.png";
+import typescript from "../tech/typescript.png";
+import html from "../tech/html.png";
+import css from "../tech/css.png";
+import reactjs from "../tech/reactjs.png";
+import redux from "../tech/redux.png";
+import tailwind from "../tech/tailwind.png";
+import nodejs from "../tech/nodejs.png";
+import mongodb from "../tech/mongodb.png";
+import git from "../tech/git.png";
+import figma from "../tech/figma.png";
+import docker from "../tech/docker.png";
+import threejs from "../tech/threejs.svg";
+
+
+
+export const technologies = [
+  {
+    name: "HTML 5",
+    icon: html,
+  },
+  {
+    name: "CSS 3",
+    icon: css,
+  },
+  {
+    name: "JavaScript",
+    icon: javascript,
+  },
+  {
+    name: "TypeScript",
+    icon: typescript,
+  },
+  {
+    name: "React JS",
+    icon: reactjs,
+  },
+  {
+    name: "Redux Toolkit",
+    icon: redux,
+  },
+  {
+    name: "Tailwind CSS",
+    icon: tailwind,
+  },
+  {
+    name: "Node JS",
+    icon: nodejs,
+  },
+  {
+    name: "MongoDB",
+    icon: mongodb,
+  },
+  {
+    name: "Three JS",
+    icon: threejs,
+  },
+  {
+    name: "git",
+    icon: git,
+  },
+  {
+    name: "figma",
+    icon: figma,
+  },
+  {
+    name: "docker",
+    icon: docker,
+  },
+];
+
 export const navLinks = [
   {
     id: 1,
@@ -286,31 +357,24 @@ export const calculateSizes = (isSmall, isMobile, isTablet) => {
 };
 
 export const workExperiences = [
+  
   {
     id: 1,
-    name: 'Framer',
-    pos: 'Lead Web Developer',
-    duration: '2022 - Present',
-    title: "Framer serves as my go-to tool for creating interactive prototypes. I use it to bring designs to  life, allowing stakeholders to experience the user flow and interactions before development.",
-    icon: '/assets/framer.svg',
-    animation: 'victory',
-  },
-  {
-    id: 2,
-    name: 'Figma',
-    pos: 'Web Developer',
-    duration: '2020 - 2022',
-    title: "Figma is my collaborative design platform of choice. I utilize it to work seamlessly with team members and clients, facilitating real-time feedback and design iterations. Its cloud-based.",
-    icon: '/assets/figma.svg',
+    name: 'Noviopus',
+    pos: 'Full Stack Engineer- Internship',
+    duration: 'Aug 2024 - Present',
+    title: "Noviopus created new and advanced AI tools that automatically connects job seekers with potential employers. With smart job search Noviopus matches the job seekers preferences like salary, location and benefits with the most suitable jobs according to their relevance.",
+    icon: '/assets/noviopus_logo.jpg',
     animation: 'clapping',
   },
   {
-    id: 3,
-    name: 'Notion',
-    pos: 'Junior Web Developer',
-    duration: '2019 - 2020',
-    title: "Notion helps me keep my projects organized. I use it for project management, task tracking, and as a central hub for documentation, ensuring that everything from design notes to.",
-    icon: '/assets/notion.svg',
-    animation: 'salute',
+    id: 2,
+    name: 'Tindo',
+    pos: 'Full Stack Engineer- Internship',
+    duration: 'Feb 2024 - May 2024',
+    title: "Tendo's mission is to provide high quality investment services to all employees, through a team of qualified experts.",
+    icon: '/assets/tindo.jpg',
+    animation: 'victory',
   },
+
 ];
