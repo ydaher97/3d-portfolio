@@ -6,7 +6,8 @@ import Button from '../components/Button.jsx';
 import TechObjectCanvas from '../components/TechObject.jsx';
 // import { Canvas } from '@react-three/fiber';
 // import Stars from './Stars.jsx';
-
+import CodeTyper from '../components/CodeTyper.jsx';
+import AnimatedEmailIcon from '../components/AnimatedEmailIcon.jsx';
 const EARTH_RADIUS_KM = 6371; // km
 const SAT_SIZE = 80; // km
 const TIME_STEP = 3 * 1000; // per frame
@@ -147,8 +148,18 @@ const About = () => {
 
         <div className="xl:col-span-2 xl:row-span-3">
           <div className="grid-container">
-            <img src="assets/grid3.png" alt="grid-3" className="w-full sm:h-[266px] h-fit object-contain" />
-
+            {/* <img src="assets/grid3.png" alt="grid-3" className="w-full sm:h-[266px] h-fit object-contain" /> */}
+            <div className="mb-4">
+              <h3 className="text-lg font-semibold text-white mb-2">Game Rules:</h3>
+              <ul className="list-disc list-inside text-gray-300">
+                <li>Type the code snippet exactly as shown</li>
+                <li>Pay attention to spaces and special characters</li>
+                <li>Your score increases with each correct entry</li>
+                <li>New snippet appears automatically upon correct completion</li>
+                <li>Challenge yourself to type faster and more accurately</li>
+              </ul>
+            </div>
+            <CodeTyper />
             <div>
               <p className="grid-headtext">My Passion for Coding</p>
               <p className="grid-subtext">
@@ -161,11 +172,14 @@ const About = () => {
 
         <div className="xl:col-span-1 xl:row-span-2">
           <div className="grid-container">
-            <img
+            {/* <img
               src="assets/grid4.png"
               alt="grid-4"
               className="w-full md:h-[126px] sm:h-[276px] h-fit object-cover sm:object-top"
-            />
+            /> */}
+            <div className="w-full md:h-[126px] sm:h-[276px] h-fit flex items-center justify-center rounded-lg">
+          <AnimatedEmailIcon />
+        </div>
 
             <div className="space-y-2">
               <p className="grid-subtext text-center">Contact me</p>

@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
-import { useFrame ,Canvas} from '@react-three/fiber';
-import { Text, Float, OrbitControls } from '@react-three/drei';
+import { useFrame, Canvas } from '@react-three/fiber';
+import { Text, Float, OrbitControls, useTexture } from '@react-three/drei';
 import * as THREE from 'three';
 
 // Import all technology icons
@@ -35,13 +35,13 @@ const technologies = [
 ];
 
 const TechIcon = ({ name, icon, position }) => {
-  const texture = new THREE.TextureLoader().load(icon);
-
+  const texture = useTexture(icon);
+  
   return (
     <Float speed={1.75} rotationIntensity={1} floatIntensity={2}>
       <mesh position={position}>
-        <circleGeometry args={[0.5, 32]} />
-        <meshBasicMaterial map={texture} transparent />
+        <planeGeometry args={[1, 1]} />
+        <meshBasicMaterial map={texture} transparent side={THREE.DoubleSide} />
       </mesh>
       <Text
         position={[position[0], position[1] - 0.8, position[2]]}
@@ -59,10 +59,9 @@ const TechIcon = ({ name, icon, position }) => {
 const TechObject = () => {
   const groupRef = useRef();
 
-  // Rotate the entire group around the Y-axis
   useFrame(() => {
     if (groupRef.current) {
-      groupRef.current.rotation.y += 0.01; // Adjust this value for rotation speed
+      groupRef.current.rotation.y += 0.004; // Slow down the rotation
     }
   });
 
@@ -88,9 +87,9 @@ const TechObject = () => {
 
 const TechObjectCanvas = () => {
   return (
-    <Canvas>
-       <ambientLight intensity={1} />
-       <OrbitControls enableZoom={false}/>
+    <Canvas camera={{ position: [0, 0, 10], fov: 40 }}>
+      <ambientLight intensity={1} />
+      <OrbitControls enableZoom={false} enablePan={false} />
       <TechObject />
     </Canvas>
   );

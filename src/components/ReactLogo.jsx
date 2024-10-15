@@ -9,48 +9,43 @@
 
 import * as THREE from 'three'
 import { useMemo, useRef } from 'react'
-import { Canvas, useFrame } from '@react-three/fiber'
-import { Trail, Float, Line, Sphere, Stars,useGLTF } from '@react-three/drei'
+import { useFrame } from '@react-three/fiber'
+import { Trail, Float, Line, Sphere, useGLTF } from '@react-three/drei'
 import { EffectComposer, Bloom } from '@react-three/postprocessing'
+import { useMediaQuery } from 'react-responsive'
 
 const ReactLogo = (props) => {
   const { nodes, materials } = useGLTF('models/react.glb');
+  
+  // Use media queries to determine screen size
+  const isSmall = useMediaQuery({ maxWidth: 440 });
+  const isMobile = useMediaQuery({ maxWidth: 768 });
+  const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1024 });
+
+  // Calculate position based on screen size
+  const position = useMemo(() => {
+    if (isSmall) return [3, 4, 0];
+    if (isMobile) return [5, 4, 0];
+    if (isTablet) return [5, 4, 0];
+    return [12, 3, 0];
+  }, [isSmall, isMobile, isTablet]);
 
   return (
-    <Float speed={4} rotationIntensity={1} floatIntensity={2} >
-      <Atom />
-      {/* <group position={[8, 8, 0]} scale={0.3} {...props} dispose={null}>
-        <mesh
-          geometry={nodes['React-Logo_Material002_0'].geometry}
-          material={materials['Material.002']}
-          position={[0, 0.079, 0.181]}
-          rotation={[0, 0, -Math.PI / 2]}
-          scale={[0.392, 0.392, 0.527]}
-        />
-      </group> */}
-      <EffectComposer >
-        <Bloom mipmapBlur luminanceThreshold={1} radius={0.7} />
-      </EffectComposer>
+    <Float speed={4} rotationIntensity={1} floatIntensity={2}>
+      <group position={position} scale={0.3} {...props}>
+        <Atom />
+        <EffectComposer>
+          <Bloom mipmapBlur luminanceThreshold={1} radius={0.7} />
+        </EffectComposer>
+      </group>
     </Float>
-    // <Canvas camera={{ position: [0, 0, 10] }}>
-    //   <color attach="background" args={['black']} />
-    //   <Float speed={4} rotationIntensity={1} floatIntensity={2}>
-    //     <Atom />
-    //   </Float>
-    //   <Stars saturation={0} count={400} speed={0.5} />
-    //   <EffectComposer>
-    //     <Bloom mipmapBlur luminanceThreshold={1} radius={0.7} />
-    //   </EffectComposer>
-    // </Canvas>
   );
 };
-
-useGLTF.preload('models/react.glb');
 
 function Atom(props) {
   const points = useMemo(() => new THREE.EllipseCurve(0, 0, 3, 1.15, 0, 2 * Math.PI, false, 0).getPoints(100), [])
   return (
-    <group {...props}  scale={0.3} dispose={null} position={[8, 4, 0]}>
+    <group {...props}>
       <Line worldUnits points={points} color="turquoise" lineWidth={0.3} />
       <Line worldUnits points={points} color="turquoise" lineWidth={0.3} rotation={[0, 0, 1]} />
       <Line worldUnits points={points} color="turquoise" lineWidth={0.3} rotation={[0, 0, -1]} />
@@ -71,16 +66,17 @@ function Electron({ radius = 2.75, speed = 6, ...props }) {
     ref.current.position.set(Math.sin(t) * radius, (Math.cos(t) * radius * Math.atan(t)) / Math.PI / 1.25, 0)
   })
   return (
-    <group {...props}  >
-      {/* <Trail local width={1} length={1} color={new THREE.Color(2, 1, 10)} attenuation={(t) =>  t} 
-       > */}
+    <group {...props}>
+      {/* <Trail local width={1} length={5} color={new THREE.Color(2, 1, 10)} attenuation={(t) => t * t}> */}
         <mesh ref={ref}>
           <sphereGeometry args={[0.25]} />
           <meshBasicMaterial color={[10, 1, 10]} toneMapped={false} />
         </mesh>
-      {/* </Trail> */}
+        {/* </Trail> */}
     </group>
   )
 }
+
+useGLTF.preload('models/react.glb');
 
 export default ReactLogo;
