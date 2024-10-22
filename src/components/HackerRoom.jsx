@@ -7,35 +7,59 @@ Files: hacker-room-new.glb [34.62MB] > /Users/hsuwinlat/Desktop/jsm pj/threejscc
 import { useGLTF, useTexture } from '@react-three/drei';
 
 export function HackerRoom(props) {
-  const { nodes, materials } = useGLTF('/models/hacker-room.glb');
+  const { nodes, materials } = useGLTF('/models/sci_fi_computer.glb');
 
-  const monitortxt = useTexture('textures/desk/monitor.png');
-  const screenTxt = useTexture('textures/desk/screen.png');
+  // const monitortxt = useTexture('textures/desk/monitor.png');
+  // const screenTxt = useTexture('textures/desk/screen.png');
 
   return (
     <group {...props} dispose={null}>
-      <mesh geometry={nodes.screen_screens_0.geometry} material={materials.screens}>
-        {/* <meshMatcapMaterial map={screenTxt} /> */}
-      </mesh>
-      <mesh geometry={nodes.screen_glass_glass_0.geometry} material={materials.glass} />
-      <mesh geometry={nodes.table_table_mat_0_1.geometry} material={materials.table_mat} />
-      <mesh geometry={nodes.table_table_mat_0_2.geometry} material={materials.computer_mat}>
-        <meshMatcapMaterial map={monitortxt} />
-      </mesh>
-      <mesh geometry={nodes.table_table_mat_0_3.geometry} material={materials.server_mat} />
-      <mesh geometry={nodes.table_table_mat_0_4.geometry} material={materials.vhsPlayer_mat} />
-      <mesh geometry={nodes.table_table_mat_0_5.geometry} material={materials.stand_mat} />
-      <mesh geometry={nodes.table_table_mat_0_6.geometry} material={materials.mat_mat} />
-      <mesh geometry={nodes.table_table_mat_0_7.geometry} material={materials.arm_mat} />
-      <mesh geometry={nodes.table_table_mat_0_8.geometry} material={materials.tv_mat}>
-        <meshMatcapMaterial map={monitortxt} />
-      </mesh>
-      <mesh geometry={nodes.table_table_mat_0_9.geometry} material={materials.cables_mat} />
-      <mesh geometry={nodes.table_table_mat_0_10.geometry} material={materials.props_mat} />
-      <mesh geometry={nodes.table_table_mat_0_11.geometry} material={materials.ground_mat} />
-      <mesh geometry={nodes.table_table_mat_0_12.geometry} material={materials.key_mat} />
+      <group scale={0.3}>
+      <group position={[0, 28.869, 312.193]} rotation={[-1.469, 0, 0]} scale={100}>
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Plane002_digital_displays_0.geometry}
+            material={materials.digital_displays}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Plane002_digital_display_sides_0.geometry}
+            material={materials.digital_display_sides}
+          />
+        </group>
+        <group position={[0, 381.812, -82.657]} rotation={[-0.229, 0, 0]} scale={100}>
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Plane001_digital_displays_0.geometry}
+            material={materials.digital_displays}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Plane001_digital_display_sides_0.geometry}
+            material={materials.digital_display_sides}
+          />
+        </group>
+        <group position={[0, 0, -94.762]} rotation={[0, Math.PI / 2, 0]} scale={123.801}>
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Circle_metal_2_0.geometry}
+            material={materials.metal_2}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Circle_metal_1_0.geometry}
+            material={materials.metal_1}
+          />
+        </group>
+      </group>
     </group>
-  );
+  )
 }
 
-useGLTF.preload('/models/hacker-room.glb');
+useGLTF.preload('/models/sci_fi_computer.glb');

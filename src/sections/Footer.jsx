@@ -8,15 +8,15 @@ const Footer = () => {
       </div>
 
       <div className="flex gap-3">
-        <div className="social-icon">
+        <div className="social-icon" onClick={() => window.open('https://github.com/ydaher97', '_blank')}>
           <img src="/assets/github.svg" alt="github" className="w-1/2 h-1/2" />
         </div>
-        <div className="social-icon">
-          <img src="/assets/twitter.svg" alt="twitter" className="w-1/2 h-1/2" />
+        <div className="social-icon" onClick={() => window.open('https://www.linkedin.com/in/yazeed-daher/', '_blank')}>
+          <img src="/assets/linkedwhite.svg" alt="linkedin" className="w-1/2 h-1/2 bg-white-700" />
         </div>
-        <div className="social-icon">
+        {/* <div className="social-icon" onClick={() => window.open('https://instagram.com/YOUR_USERNAME', '_blank')}>
           <img src="/assets/instagram.svg" alt="instagram" className="w-1/2 h-1/2" />
-        </div>
+        </div> */}
       </div>
 
       <p className="text-white-500">© 2024 Yazeed Daher. All rights reserved.</p>

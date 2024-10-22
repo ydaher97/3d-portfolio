@@ -157,7 +157,7 @@ export const myProjects = [
     subdesc:
       'Built as a unique Software-as-a-Service app with Next.js 14, Tailwind CSS, TypeScript, ,prisma, google api and clerk.',
     href: 'https://navigatenest-ai.vercel.app/',
-    texture: '/textures/project/project1.mp4',
+    texture: '/assets/trip.mp4',
     logo: '/assets/navigatenest.svg',
     logoStyle: {
       backgroundColor: '#2A1816',
@@ -204,7 +204,7 @@ export const myProjects = [
     subdesc:
       'With MedHammers, users can experience the future of collaboration, where multiple contributors work together in real time without any lag, by using Next.js and Liveblocks newest features.',
     href: 'https://genius-doctor.vercel.app/',
-    texture: '/textures/project/project2.mp4',
+    texture: '/assets/med.mp4',
     logo: '/assets/medhammers.svg',
     logoStyle: {
       backgroundColor: '#13202F',
@@ -230,8 +230,13 @@ export const myProjects = [
       },
       {
         id: 4,
-        name: 'Framer Motion',
-        path: '/assets/framer.png',
+        name: 'Prisma',
+        path: '/assets/prisma-logo.png',
+      },
+      {
+        id: 5,
+        name: 'next',
+        path: '/assets/nextjs.png',
       },
     ],
   },
@@ -239,9 +244,9 @@ export const myProjects = [
     title: 'financeSelf - Personal Finance Management System',
     desc: 'financeSelf is a personal finance management system that allows users to track their income and expenses, create budgets, and view their financial progress.',
     subdesc:
-      'With a focus on efficiency, CarePulse integrantes complex forms and SMS notifications, by using Next.js, Appwrite, Twillio and Sentry that enhance operational workflows.',
+      'With a focus on efficiency, financeSelf integrantes complex forms, charts and CSV upload, by using Next.js, react, hono that enhance operational workflows.',
     href: 'https://financeself.vercel.app',
-    texture: '/textures/project/project3.mp4',
+    texture: '/assets/finance.mp4',
     logo: '/assets/finance.svg',
     logoStyle: {
       backgroundColor: '#60f5a1',
@@ -269,18 +274,24 @@ export const myProjects = [
       },
       {
         id: 4,
-        name: 'Framer Motion',
-        path: '/assets/framer.png',
+        name: 'Hono',
+        path: '/assets/hono.png',
+      },
+      {
+        id: 5,
+        name: 'next',
+        path: '/assets/nextjs.png',
       },
     ],
   },
   {
-    title: 'seer chat - Online Anonymous group chat',
-    desc: 'seer chat is a platform that allows users to chat anonymously with each other. based on the location, each location has a chat room where users can chat with each other.',
+    title: 'Seer chat - Online Anonymous group chat',
+    desc: 'Seer chat is a platform that allows users to chat anonymously with each other. based on the location, each location has a chat room where users can chat with each other. and a paied membership so the users can follow each other in a and chat privately ',
+                                                                                                              
     subdesc:
-      'Built with Next.js 14 redis pusher and mongodb',
+      'Built with Next.js 14 convex a real time database ,google maps and tailwind ',
     href: 'https://seer-three.vercel.app',
-    texture: '/textures/project/project4.mp4',
+    texture: '/assets/seer.mp4',
     logo: '/assets/seer.svg',
     logoStyle: {
       backgroundColor: '#0E1F38',
@@ -306,9 +317,15 @@ export const myProjects = [
       },
       {
         id: 4,
-        name: 'Framer Motion',
-        path: '/assets/framer.png',
+        name: 'Convex',
+        path: '/assets/convex.png',
       },
+      {
+        id: 5,
+        name: 'next',
+        path: '/assets/nextjs.png',
+      },
+      
     ],
   },
   // {
